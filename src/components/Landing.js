@@ -111,13 +111,13 @@ const Landing = () => {
       .catch((err) => {
         let error = err.response ? err.response.data : err;
         // get error status
-        let status = err.response.status;
+        let status = err.response.statusId;
         console.log("status", status);
         if (status === 429) {
           console.log("too many requests", status);
 
           showErrorToast(
-            `Quota of 100 requests exceeded for the Day! Please read the blog on freeCodeCamp to learn how to setup your own RAPID API Judge0!`,
+            `Quota of 50 requests exceeded for the Day!`,
             10000
           );
         }
